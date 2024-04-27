@@ -6,12 +6,15 @@ import Footer from './BasicStructure/Footer'
 function App() {
   return (
     <>
-      <div className="max-w-[1170px] mx-auto mt-6">
-        <Navbar></Navbar>
-        <Outlet></Outlet>
-
+      <div className='bg-stone-400 bg-opacity-50'>
+        <div className="max-w-[1170px] mx-auto">
+          <Navbar></Navbar>
+        </div>
       </div>
-      <div className="bg-stone-400 bg-opacity-75">
+      <div className="max-w-[1170px] mx-auto mt-6">
+        <Outlet></Outlet>
+      </div>
+      <div className="bg-stone-400 bg-opacity-50">
         <Footer></Footer>
       </div>
     </>
