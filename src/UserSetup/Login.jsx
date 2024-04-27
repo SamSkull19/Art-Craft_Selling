@@ -12,7 +12,7 @@ const Login = () => {
         <div className="bg-stone-300  p-10 mx-auto rounded-2xl mt-10 mb-16 flex flex-col-reverse md:flex md:flex-row justify-evenly items-center gap-5">
 
             <div>
-                <img src={loginImg} alt="..." className="w-[300px] md:w-[620px] rounded-lg mt-5" />
+                <img src={loginImg} alt="..." className="w-[300px] md:w-[620px] rounded-lg mt-5 brightness-50" />
             </div>
 
             <div className="bg-cyan-800 p-7 rounded-2xl">
