@@ -12,7 +12,6 @@ const router = createBrowserRouter([
       children: [
         {
           path: "/",
-          loader: () => fetch('RealEstateInfo.json'),
           element: <>
             <Slider></Slider>
           </>
