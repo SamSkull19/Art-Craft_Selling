@@ -13,7 +13,7 @@ import s3 from '../assets/s3.jpg';
 import s4 from '../assets/s4.jpg';
 
 
-const Home = () => {
+const Slider = () => {
     return (
         <div className='roboto mt-10'>
 
@@ -103,4 +103,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Slider;
