@@ -27,9 +27,9 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/'>All Art & craft Items</Link></li>
+                        <li><Link to='/'>All Art & Craft Items</Link></li>
                         <li><Link to='/'>Add Craft Item</Link></li>
-                        <li><Link to='/'>My Art&Craft List</Link></li>
+                        <li><Link to='/'>My Art & Craft List</Link></li>
                         {/* {
                             user && <>
                                 <li><Link to='/profile'>Profile</Link></li>

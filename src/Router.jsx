@@ -3,6 +3,8 @@ import "./index.css";
 import Find from './Find.jsx';
 import { createBrowserRouter } from "react-router-dom";
 import Slider from './HomePage/Slider.jsx';
+import Login from './UserSetup/Login.jsx';
+import Register from './UserSetup/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -15,7 +17,19 @@ const router = createBrowserRouter([
           element: <>
             <Slider></Slider>
           </>
-        }
+        },
+        {
+          path: "/login",
+          element: <>
+            <Login></Login>
+          </>
+        },
+        {
+          path: "/register",
+          element: <>
+            <Register></Register>
+          </>
+        },
       ]
     },
 

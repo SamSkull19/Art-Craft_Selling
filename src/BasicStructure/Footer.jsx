@@ -22,12 +22,13 @@ const Footer = () => {
                     <a className="link link-hover">Glass Arts</a>
                     <a className="link link-hover">Paper Crafts</a>
                 </nav>
+
                 <nav>
                     <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Our Crafts</a>
-                    <a className="link link-hover">Our Arts</a>
+                    <p className="">Email: info@neffroxxcrafts.com</p>
+                    <p className="">Phone: +8801234567811</p>
+                    <p className="">Website: www.neffroxxcrafts.com</p>
+                    <p className="">Address: 123 Craft Street, <br />Bajra, Sylhet</p>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Legal</h6>
