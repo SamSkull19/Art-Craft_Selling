@@ -3,8 +3,8 @@ const Stats = () => {
     return (
         <div className="mt-20">
             <div className="flex flex-col justify-center items-center text-center">
-                <h1 className="text-4xl font-bold">Statistical Arts and Crafts</h1>
-                <h3 className="mt-4">Discover the beauty of data through our unique collection of statistical arts and crafts. <br />Merge analytics with aesthetics and bring numbers to life in stunning visual representations.</h3>
+                <h1 className="text-4xl font-bold ">Statistical Arts and Crafts</h1>
+                <h3 className="mt-4 text-gray-400">Discover the beauty of data through our unique collection of statistical arts and crafts. <br />Merge analytics with aesthetics and bring numbers to life in stunning visual representations.</h3>
             </div>
 
             <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ml-20 lg:ml-0">

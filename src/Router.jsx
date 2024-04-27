@@ -6,6 +6,7 @@ import Slider from './HomePage/Slider.jsx';
 import Login from './UserSetup/Login.jsx';
 import Register from './UserSetup/Register.jsx';
 import Stats from './HomePage/Stats.jsx';
+import Executives from './HomePage/Executives.jsx';
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
           element: <>
             <Slider></Slider>
             <Stats></Stats>
+            <Executives></Executives>
           </>
         },
         {
