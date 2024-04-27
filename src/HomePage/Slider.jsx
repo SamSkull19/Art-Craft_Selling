@@ -31,7 +31,7 @@ const Home = () => {
 
             >
                 <SwiperSlide>
-                    <div className="w-full h-[500px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-25 bg-orange-900">
+                    <div className="w-full h-[550px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-25 bg-orange-900">
 
                         <img src={s1} className="w-[340px] md:w-[600px] rounded-2xl mb-8 md:mb-0 mt-8 md:mt-0 ml-0 md:ml-40" />
                         <div className='w-[340px] md:w-[600px] bg-stone-400 bg-opacity-75 p-8 rounded-xl mb-8 md:mb-0 absolute ml-0 md:ml-20 lg:ml-[450px] mt-40 md:mt-0 z-20'>
@@ -47,7 +47,7 @@ const Home = () => {
                 </SwiperSlide>
                 
                 <SwiperSlide>
-                    <div className="w-full h-[500px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-40 bg-red-800">
+                    <div className="w-full h-[550px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-40 bg-red-800">
 
                         <img src={s2} className="w-[340px] md:w-[600px] rounded-2xl mb-8 md:mb-0 mt-8 md:mt-0 ml-0 md:ml-40" />
                         <div className='w-[340px] md:w-[600px] bg-stone-400 bg-opacity-75 p-8 rounded-xl mb-8 md:mb-0 absolute ml-0 md:ml-20 lg:ml-[450px] mt-40 md:mt-0'>
@@ -63,7 +63,7 @@ const Home = () => {
                 </SwiperSlide>
                 
                 <SwiperSlide>
-                    <div className="w-full h-[500px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-60 bg-cyan-200">
+                    <div className="w-full h-[550px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-60 bg-cyan-200">
 
                         <img src={s3} className="w-[340px] md:w-[600px] rounded-2xl mb-8 md:mb-0 mt-8 md:mt-0 ml-0 md:ml-40" />
                         <div className='w-[340px] md:w-[600px] bg-stone-400 bg-opacity-75 p-8 rounded-xl mb-8 md:mb-0 absolute ml-0 md:ml-20 lg:ml-[450px] mt-40 md:mt-0'>
@@ -79,7 +79,7 @@ const Home = () => {
                 </SwiperSlide>
                 
                 <SwiperSlide>
-                    <div className="w-full h-[500px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-40 bg-yellow-800">
+                    <div className="w-full h-[550px] md:h-[500px] rounded-2xl flex flex-col md:flex-row items-center bg-opacity-40 bg-yellow-800">
 
                         <img src={s4} className="w-[340px] md:w-[600px] rounded-2xl mb-8 md:mb-0 mt-8 md:mt-0 ml-0 md:ml-40" />
                         <div className='w-[340px] md:w-[600px] bg-stone-400 bg-opacity-75 p-8 rounded-xl mb-8 md:mb-0 absolute ml-0 md:ml-20 lg:ml-[450px] mt-40 md:mt-0'>
