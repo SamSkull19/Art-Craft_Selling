@@ -49,6 +49,7 @@ const Login = () => {
         })
         .catch(error => {
             console.log('error', error.message);
+            toast("Something went wrong");
         })
     }
 
@@ -61,6 +62,7 @@ const Login = () => {
         })
         .catch(error => {
             console.log('error', error.message);
+            toast("Something went wrong");
         })
     }
     

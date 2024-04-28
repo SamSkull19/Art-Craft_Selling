@@ -7,6 +7,7 @@ import Login from './UserSetup/Login.jsx';
 import Register from './UserSetup/Register.jsx';
 import Stats from './HomePage/Stats.jsx';
 import Executives from './HomePage/Executives.jsx';
+import AddCraftItems from './ProductEdit&List/AddCraftItems.jsx';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,12 @@ const router = createBrowserRouter([
           path: "/register",
           element: <>
             <Register></Register>
+          </>
+        },
+        {
+          path: "/addCraftItems",
+          element: <>
+            <AddCraftItems></AddCraftItems>
           </>
         },
       ]
