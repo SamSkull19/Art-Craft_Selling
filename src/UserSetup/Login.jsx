@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import loginImg from "../assets/loginPic.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -38,13 +38,25 @@ const Login = () => {
 
     const googleProvider = new GoogleAuthProvider();
 
-
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleLogin = () => {
         signInWithPopup(auth, googleProvider)
         .then( result => {
             const goggleUser = result.user;
             console.log(goggleUser);
+            // navigate(location?.state ? location.state : '/');
+        })
+        .catch(error => {
+            console.log('error', error.message);
+        })
+    }
+
+    const handleGithubLogin = () => {
+        signInWithPopup(auth, githubProvider)
+        .then( result => {
+            const githubUser = result.user;
+            console.log(githubUser);
             // navigate(location?.state ? location.state : '/');
         })
         .catch(error => {
@@ -82,7 +94,7 @@ const Login = () => {
                 <div className="mt-5">
                     <button onClick={handleGoogleLogin} className="flex items-center bg-blue-500 text-white justify-center p-2 rounded-lg w-full"><FaGoogle className="mr-3" /> Login With Google</button>
 
-                    <button className="flex items-center bg-slate-500 text-white justify-center p-2 rounded-lg mt-5 w-full"><FaSquareGithub className="mr-3" /> Login With Github</button>
+                    <button onClick={handleGithubLogin} className="flex items-center bg-slate-500 text-white justify-center p-2 rounded-lg mt-5 w-full"><FaSquareGithub className="mr-3" /> Login With Github</button>
 
                 </div>
             </div>
