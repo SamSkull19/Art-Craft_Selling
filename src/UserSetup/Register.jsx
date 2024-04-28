@@ -1,17 +1,74 @@
 import { Link } from "react-router-dom";
 import regImg from "../assets/regPic.jpg"
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
 
 
 
 const Register = () => {
 
+    const {createUser} = useContext(AuthContext);
+
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const displayName = e.target.username.value;
+        const photoURL = e.target.photoLink.value;
+        const password = e.target.password.value;
+        const acceptTerms = e.target.terms.checked;
+
+        if (password.length < 6) {
+            toast('Password should be more than 6 characters.');
+            return;
+        }
+
+        else if (!/[A-Z]/.test(password)) {
+            toast('Password should have at least one uppercase character.');
+            return;
+        }
+        
+        else if (!/[a-z]/.test(password)) {
+            toast('Password should have at least one lowercase character.');
+            return;
+        }
+
+        else if(!acceptTerms){
+            toast('Please accept our Terms and Conditions.');
+            return;
+        }
+
+
+        createUser(email, password)
+
+            .then(result => {
+                console.log(result.user);
+                updateProfile(result.user, {
+                    displayName: displayName,
+                    photoURL : photoURL
+                })
+                .then( () => console.log('Profile Updated'))
+                .catch( error => console.log(error))
+                toast('User Successfully Created');
+                e.target.reset();
+            })
+
+            .catch(error => {
+                console.log(error);
+                toast('Already Registered')
+            })
+
+    }
 
     return (
-        <div className="bg-stone-300 p-10 mx-auto rounded-2xl mt-10 mb-16 flex flex-col md:flex md:flex-row justify-evenly items-center">
+        <div className="bg-stone-300 p-10 mx-auto rounded-2xl mt-10 mb-16 flex flex-col md:flex md:flex-row justify-evenly items-center gap-5">
 
             
             <div className="bg-cyan-800 p-7 rounded-2xl">
-                <form>
+                <form onSubmit={handleRegister}>
                     <label className="input input-bordered flex items-center gap-2 mb-5">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" /></svg>
                         <input type="text" name="username" className="grow" placeholder="Username" required />
@@ -52,7 +109,9 @@ const Register = () => {
             <div>
                 <img src={regImg} alt="..." className="w-[300px] md:w-[620px] rounded-lg mt-5 brightness-50" />
             </div>
+            <ToastContainer />
         </div>
+        
     );
 
 };
