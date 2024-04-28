@@ -1,6 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    console.log(user);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                console.log('Logged Out');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className="roboto">
             <div className="navbar bg-stone-400 bg-opacity-0 py-5">
@@ -30,38 +45,42 @@ const Navbar = () => {
                         <li><Link to='/'>All Art & Craft Items</Link></li>
                         <li><Link to='/'>Add Craft Item</Link></li>
                         <li><Link to='/'>My Art & Craft List</Link></li>
-                        {/* {
-                            user && <>
-                                <li><Link to='/profile'>Profile</Link></li>
-                            </>
-                        } */}
+                        {
+                            // user && <>
+                            //     <li><Link to='/profile'>Profile</Link></li>
+                            // </>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <div>
-                        <div className="dropdown dropdown-end">
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className="w-12 rounded-full">
-                                    <img alt="" src="" />
-                                </div>
-                            </div>
-                            <ul tabIndex={0} className="mt-3 z-20 p-2 shadow menu menu-sm dropdown-content rounded-box w-52 bg-stone-400 bg-opacity-80">
-                                <li>
-                                    <a>Samin</a>
-                                </li>
-                                <li><a>Logout</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    {/* <div>
                         {
-                            user ? <div className="flex gap-2">
-
-                                <button className="btn btn-active btn-ghost text-sm px-4 font-medium ml-2"> Logout </button>
-                            </div> :
-                                <button className="btn btn-active btn-ghost text-sm px-4 font-medium"> <Link to='/login'>Login</Link> </button>
+                            user ?
+                                <div className="flex gap-2">
+                                    <div className="dropdown dropdown-end">
+                                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-10 rounded-full">
+                                                <img alt='...' src={user && user.photoURL} />
+                                            </div>
+                                        </div>
+                                        <ul tabIndex={0} className="mt-3 z-20 p-2 shadow menu menu-sm dropdown-content rounded-box w-52 bg-stone-400 bg-opacity-80">
+                                            <li>
+                                                <a>{user && user.displayName}</a>
+                                            </li>
+                                            <li>
+                                                <a onClick={handleLogOut}>Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button onClick={handleLogOut} className="btn btn-active btn-neutral text-sm px-4 font-medium ml-2 w-20"> Logout </button>
+                                </div>
+                                :
+                                <div>
+                                    <button className="btn btn-active btn-neutral text-sm px-4 font-medium w-20"> <Link to='/login'>Login</Link> </button>
+                                    <button className="btn btn-active btn-neutral text-sm px-4 font-medium w-20 ml-4"> <Link to='/register'>Register</Link> </button>
+                                </div>
                         }
-                    </div> */}
+                    </div>
 
                 </div>
             </div>
