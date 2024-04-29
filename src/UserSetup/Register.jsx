@@ -61,6 +61,8 @@ const Register = () => {
                 toast('Already Registered')
             })
 
+        fetch()
+
     }
 
     return (

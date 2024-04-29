@@ -1,6 +1,5 @@
 import App from './App.jsx'
 import "./index.css";
-import Find from './Find.jsx';
 import { createBrowserRouter } from "react-router-dom";
 import Slider from './HomePage/Slider.jsx';
 import Login from './UserSetup/Login.jsx';
@@ -11,6 +10,7 @@ import AddCraftItems from './ProductEdit&List/AddCraftItems.jsx';
 import CraftItemsList from './ProductEdit&List/CraftItemsList.jsx';
 import CItemsDetail from './ProductEdit&List/CItemsDetail.jsx';
 import AllCraftItems from './AllItemsList/AllCraftItems.jsx';
+import MyCraftItems from './MyCraftItems/MyCraftItems.jsx';
 
 
 const router = createBrowserRouter([
@@ -65,13 +65,15 @@ const router = createBrowserRouter([
             <AllCraftItems></AllCraftItems>
           </>
         },
+        {
+          path: "/myArt&CraftList",
+          element: <>
+            <MyCraftItems></MyCraftItems>
+          </>
+        },
       ]
     },
 
-    {
-      path: "/find",
-      element: <Find></Find>,
-    },
   ]);
 
 export default router;

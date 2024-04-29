@@ -28,7 +28,7 @@ const Navbar = () => {
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/allCraftItems'>All Art & craft Items</Link></li>
                             <li><Link to='/addCraftItems'>Add Craft Item</Link></li>
-                            <li><Link to='/'>My Art&Craft List</Link></li>
+                            <li><Link to='/myArt&CraftList'>My Art&Craft List</Link></li>
                             {/* {
                                 user && <>
                                     <li><Link to='/profile'>Profile</Link></li>
@@ -44,7 +44,7 @@ const Navbar = () => {
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/allCraftItems'>All Art & Craft Items</Link></li>
                         <li><Link to='/addCraftItems'>Add Craft Item</Link></li>
-                        <li><Link to='/'>My Art & Craft List</Link></li>
+                        <li><Link to='/myArt&CraftList'>My Art & Craft List</Link></li>
                         {
                             // user && <>
                             //     <li><Link to='/profile'>Profile</Link></li>
