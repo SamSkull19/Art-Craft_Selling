@@ -10,12 +10,12 @@ const AllCraftItems = () => {
 
     return (
         <div>
-            {/* <p>Data : {loadAllCraftData.length}</p> */}
+
             <div className="overflow-x-auto">
-                <table className="table bg-stone-300">
+                <table className="table bg-stone-600">
                     {/* head */}
                     <thead>
-                        <tr className="text-black text-sm">
+                        <tr className="text-stone-200 text-base">
                             <th>Item Name</th>
                             <th>Subcategory</th>
                             <th>Rating</th>
@@ -31,16 +31,7 @@ const AllCraftItems = () => {
 
                         
                     </tbody>
-                    {/* foot */}
-                    {/* <tfoot>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
-                            <th></th>
-                        </tr>
-                    </tfoot> */}
+
 
                 </table>
             </div>

@@ -7,7 +7,7 @@ const CraftItem = ({ craftItem }) => {
 
     const navigate = useNavigate();
 
-    const handleEstateDetail = () => {
+    const handleCraftDetail = () => {
         navigate(`/craftItemsDetail/${craftItem._id}`);
     }
 
@@ -30,7 +30,7 @@ const CraftItem = ({ craftItem }) => {
                     <p className='text-base font-bold my-3'>Stock Status: {stockStatus}</p>
 
                     <p className='text-lg font-bold my-3'>Price : {price}  <span className="font-extrabold">৳</span></p>
-                    <button onClick={handleEstateDetail} className="btn bg-cyan-700 text-white">View Details</button>
+                    <button onClick={handleCraftDetail} className="btn bg-cyan-700 text-white">View Details</button>
                 </div>
             </div>
         </div>
