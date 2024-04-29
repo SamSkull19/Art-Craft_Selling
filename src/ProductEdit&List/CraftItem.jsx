@@ -1,13 +1,19 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const CraftItem = ({ craftItem }) => {
 
     const { imageLink, _id, itemName, customization, price, subcategoryName, stockStatus, rating } = craftItem;
 
+    const navigate = useNavigate();
+
+    const handleEstateDetail = () => {
+        navigate(`/craftItemsDetail/${craftItem._id}`);
+    }
 
     return (
         <div>
-            <div className='bg-teal-100 p-6 rounded-2xl animate__heartBeat'>
+            <div className='bg-stone-300 p-6 rounded-2xl animate__heartBeat h-full mt-5'>
                 <div>
                     <img src={imageLink} alt={_id} className='w-[350px] h-[250px] rounded-2xl' />
                 </div>
@@ -23,8 +29,8 @@ const CraftItem = ({ craftItem }) => {
 
                     <p className='text-base font-bold my-3'>Stock Status: {stockStatus}</p>
 
-                    <p className='text-lg font-bold my-3'>Price : {price}</p>
-                    <button className="btn bg-cyan-700 text-white">View Details</button>
+                    <p className='text-lg font-bold my-3'>Price : {price}  <span className="font-extrabold">৳</span></p>
+                    <button onClick={handleEstateDetail} className="btn bg-cyan-700 text-white">View Details</button>
                 </div>
             </div>
         </div>

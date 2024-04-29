@@ -9,6 +9,8 @@ import Stats from './HomePage/Stats.jsx';
 import Executives from './HomePage/Executives.jsx';
 import AddCraftItems from './ProductEdit&List/AddCraftItems.jsx';
 import CraftItemsList from './ProductEdit&List/CraftItemsList.jsx';
+import CItemsDetail from './ProductEdit&List/CItemsDetail.jsx';
+import AllCraftItems from './AllItemsList/AllCraftItems.jsx';
 
 
 const router = createBrowserRouter([
@@ -26,22 +28,41 @@ const router = createBrowserRouter([
             <Executives></Executives>
           </>
         },
+
         {
           path: "/login",
           element: <>
             <Login></Login>
           </>
         },
+
         {
           path: "/register",
           element: <>
             <Register></Register>
           </>
         },
+
         {
           path: "/addCraftItems",
           element: <>
             <AddCraftItems></AddCraftItems>
+          </>
+        },
+        
+        {
+          path: "/craftItemsDetail/:id",
+          loader: () => fetch('http://localhost:5000/craftItems'),
+          element: <>
+            <CItemsDetail></CItemsDetail>
+          </>
+        },
+        
+        {
+          path: "/allCraftItems",
+          loader: () => fetch('http://localhost:5000/craftItems'),
+          element: <>
+            <AllCraftItems></AllCraftItems>
           </>
         },
       ]
