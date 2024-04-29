@@ -6,7 +6,6 @@ const CraftItemsList = () => {
     console.log(craftItems);
     return (
         <div>
-            {/* <h1>Crafted Items : {craftItems.length}</h1> */}
 
             <div className="mt-16 roboto">
                 <h2 className="mb-6 text-4xl text-center font-extrabold">Crafted Items List</h2>
