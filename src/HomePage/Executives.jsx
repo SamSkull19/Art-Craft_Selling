@@ -21,7 +21,7 @@ const Executives = () => {
                             John Denver
                             <div className="badge badge-accent text-yellow-100 p-2">CEO</div>
                         </h2>
-                        <p className='text-orange-900 font-medium text-justify'>John Denver is the driving force behind our companies vision and success. As the CEO, she leads with unwavering dedication and a keen strategic mindset. With over two decades of experience in the industry, Jane brings a wealth of knowledge and expertise to her role.</p>
+                        <p className='text-orange-900 font-medium text-xs text-justify'>John Denver is the driving force behind our companies vision and success. As the CEO, she leads with unwavering dedication and a keen strategic mindset. With over two decades of experience in the industry, Jane brings a wealth of knowledge and expertise to her role.</p>
                         <div className="card-actions justify-end">
                             <div className="badge badge-outline">Founder</div>
                             <div className="badge badge-outline">Entrepreneur</div>
@@ -36,7 +36,7 @@ const Executives = () => {
                             John Doe
                             <div className="badge badge-success text-yellow-100 p-2">General Manager</div>
                         </h2>
-                        <p className='text-orange-900 font-medium text-justify'>John Doe is our General Manager, responsible for overseeing the day-to-day operations of our organization. With a wealth of experience in management and a proven track record of success, John plays a pivotal role in driving our company forward.</p>
+                        <p className='text-orange-900 font-medium text-xs text-justify'>John Doe is our General Manager, responsible for overseeing the day-to-day operations of our organization. With a wealth of experience in management and a proven track record of success, John plays a pivotal role in driving our company forward.</p>
                         <div className="card-actions justify-end">
                             <div className="badge badge-outline">Founder</div>
                             <div className="badge badge-outline">Enthusiast</div>
@@ -54,7 +54,7 @@ const Executives = () => {
                             Sarah Smith
                             <div className="badge badge-secondary text-yellow-100 p-2">Project Head</div>
                         </h2>
-                        <p className='text-orange-900 font-medium text-justify'>Sarah Smith is our dedicated Project Head, leading our team with precision and expertise to deliver successful outcomes on every project. With a background in project management and a passion for innovation, Sarah brings a dynamic energy to our organization.</p>
+                        <p className='text-orange-900 font-medium text-xs text-justify'>Sarah Smith is our dedicated Project Head, leading our team with precision and expertise to deliver successful outcomes on every project. With a background in project management and a passion for innovation, Sarah brings a dynamic energy to our organization.</p>
                         <div className="card-actions justify-end">
                             <div className="badge badge-outline">Traveler</div>
                             <div className="badge badge-outline">Watcher</div>

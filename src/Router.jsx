@@ -8,6 +8,7 @@ import Register from './UserSetup/Register.jsx';
 import Stats from './HomePage/Stats.jsx';
 import Executives from './HomePage/Executives.jsx';
 import AddCraftItems from './ProductEdit&List/AddCraftItems.jsx';
+import CraftItemsList from './ProductEdit&List/CraftItemsList.jsx';
 
 
 const router = createBrowserRouter([
@@ -17,9 +18,11 @@ const router = createBrowserRouter([
       children: [
         {
           path: "/",
+          loader: () => fetch('http://localhost:5000/craftItems'),
           element: <>
             <Slider></Slider>
             <Stats></Stats>
+            <CraftItemsList></CraftItemsList>
             <Executives></Executives>
           </>
         },
