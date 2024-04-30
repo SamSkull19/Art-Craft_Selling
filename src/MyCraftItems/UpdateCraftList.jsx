@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const UpdateCraftList = () => {
     const updateItems = useLoaderData();
-
+    const { loading } = useContext(AuthContext);
+   
     const { id } = useParams();
 
     console.log(id);
@@ -36,30 +39,35 @@ const UpdateCraftList = () => {
         const stockStatus = form.Stock_Status.value;
 
 
-        const updateItems = { itemName, subcategoryName, shortDescription, price, rating, customization, imageLink, imageType, processingTime, stockStatus}
+        const updateItems = { itemName, subcategoryName, shortDescription, price, rating, customization, imageLink, imageType, processingTime, stockStatus }
 
         console.log(updateItems);
 
         fetch(`http://localhost:5000/craftItems/${_id}`, {
             method: 'PUT',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(updateItems)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.modifiedCount){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Item Updated Successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Item Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
     }
+
+    if (loading) {
+        return <div className="flex justify-center items-center"><span className="loading loading-spinner loading-lg"></span></div>
+    }
+
 
     return (
         <div>
@@ -72,7 +80,7 @@ const UpdateCraftList = () => {
 
                         <div>
                             <label className="text-black dark:text-gray-200">Item Name : </label>
-                            <input type="text" id="item_name" name="item_name" placeholder="Enter Item Name" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={itemName}/>
+                            <input type="text" id="item_name" name="item_name" placeholder="Enter Item Name" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={itemName} />
                         </div>
 
 
@@ -92,7 +100,7 @@ const UpdateCraftList = () => {
 
                         <div>
                             <label className="text-black dark:text-gray-200">Short Description : </label>
-                            <input type="text" id="short_description" name="short_description" placeholder="Enter Short Description" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={shortDescription}/>
+                            <input type="text" id="short_description" name="short_description" placeholder="Enter Short Description" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={shortDescription} />
                         </div>
 
                         <div>
@@ -111,7 +119,7 @@ const UpdateCraftList = () => {
                                 <option>5</option>
                             </select>
                         </div>
-                        
+
                         <div>
                             <label className="text-black dark:text-gray-200">Customization : </label>
                             <select name="customization" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={customization}>
@@ -122,22 +130,22 @@ const UpdateCraftList = () => {
                             </select>
                         </div>
 
-                        
+
 
                         <div>
                             <label className="text-black dark:text-gray-200">Image Link : </label>
-                            <input type="text" id="image_link" name="image_link" placeholder="Enter Image Link" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={imageLink}/>
+                            <input type="text" id="image_link" name="image_link" placeholder="Enter Image Link" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={imageLink} />
                         </div>
                         <div>
                             <label className="text-black dark:text-gray-200">Image Type : </label>
-                            <input type="text" id="image_type" name="image_type" placeholder="Enter Image Type" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={imageType}/>
+                            <input type="text" id="image_type" name="image_type" placeholder="Enter Image Type" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={imageType} />
                         </div>
 
                         <div>
                             <label className="text-black dark:text-gray-200">Processing Time : </label>
-                            <input type="number" id="processing_time" name="processing_time" placeholder="Enter Processing Time (In Days)" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={processingTime}/>
+                            <input type="number" id="processing_time" name="processing_time" placeholder="Enter Processing Time (In Days)" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" defaultValue={processingTime} />
                         </div>
-                        
+
 
                         <div>
                             <label className="text-black dark:text-gray-200">Stock Status : </label>

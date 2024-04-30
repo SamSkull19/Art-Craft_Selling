@@ -1,7 +1,7 @@
 
 import { FaGoogle } from "react-icons/fa";
 import { FaSquareGithub } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../assets/loginPic.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -15,6 +15,8 @@ const Login = () => {
 
     const { signInUser } = useContext(AuthContext);
 
+    const location = useLocation();
+    const navigate = useNavigate();
 
 
     const handleLogin = e => {
@@ -27,7 +29,7 @@ const Login = () => {
                 console.log(result.user);
                 toast('Successfully Logged in');
                 e.target.reset();
-                // navigate(location?.state ? location.state : '/');
+                navigate(location?.state ? location.state : '/');
             })
 
             .catch(error => {
@@ -45,7 +47,7 @@ const Login = () => {
         .then( result => {
             const goggleUser = result.user;
             console.log(goggleUser);
-            // navigate(location?.state ? location.state : '/');
+            navigate(location?.state ? location.state : '/');
         })
         .catch(error => {
             console.log('error', error.message);
@@ -58,7 +60,7 @@ const Login = () => {
         .then( result => {
             const githubUser = result.user;
             console.log(githubUser);
-            // navigate(location?.state ? location.state : '/');
+            navigate(location?.state ? location.state : '/');
         })
         .catch(error => {
             console.log('error', error.message);

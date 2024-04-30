@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const CraftItem = ({ craftItem }) => {
 
     const { imageLink, _id, itemName, customization, price, subcategoryName, stockStatus, rating } = craftItem;
 
+    const location = useLocation();
     const navigate = useNavigate();
 
     const handleCraftDetail = () => {
-        navigate(`/craftItemsDetail/${craftItem._id}`);
+        navigate(location?.state ? location.state : `/craftItemsDetail/${craftItem._id}`);
     }
 
     return (
