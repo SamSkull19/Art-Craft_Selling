@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import AllCraftItem from "./AllCraftItem";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const AllCraftItems = () => {
 
@@ -7,6 +9,10 @@ const AllCraftItems = () => {
 
     console.log(loadAllCraftData);
 
+    const { loading } = useContext(AuthContext);
+    if (loading) {
+        return <div className="flex justify-center items-center"><span className="loading loading-spinner loading-lg"></span></div>
+    }
 
     return (
         <div>
@@ -26,10 +32,10 @@ const AllCraftItems = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            loadAllCraftData.map( loadAllCraft => <AllCraftItem key={loadAllCraftData._id} loadAllCraft={loadAllCraft} ></AllCraftItem> )
+                            loadAllCraftData.map(loadAllCraft => <AllCraftItem key={loadAllCraftData._id} loadAllCraft={loadAllCraft} ></AllCraftItem>)
                         }
 
-                        
+
                     </tbody>
 
 

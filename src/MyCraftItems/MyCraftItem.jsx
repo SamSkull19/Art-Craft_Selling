@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyCraftItem = ({ myCraft, handleDeleteItems}) => {
@@ -39,14 +40,17 @@ const MyCraftItem = ({ myCraft, handleDeleteItems}) => {
                 });
               }
             })
-            
-          // const deletedData = remainItems.find(remainItem => remainItem._id !== id);
-          // const remainData = remainItems.filter(remain => remain.id !== deletedData.id );
-          // setRemainItems(remainData);
           handleDeleteItems(id);
         }
       });
   }
+
+  const navigate = useNavigate();
+
+    const handleUpdate = id => {
+        navigate(`/updatePage/${id}`);
+        console.log(id);
+    }
 
   const { imageLink, _id, itemName, customization, price, stockStatus, rating } = remainItems;
 
@@ -71,7 +75,9 @@ const MyCraftItem = ({ myCraft, handleDeleteItems}) => {
           <p className='text-base font-bold my-3'>Stock Status: {stockStatus}</p>
 
           <p className='text-lg font-bold my-3'>Price : {price}  <span className="font-extrabold">৳</span></p>
-          <button className="btn bg-cyan-700 text-white w-[100px]">Update</button>
+
+          <button onClick={() => handleUpdate(_id)} className="btn bg-cyan-700 text-white w-[100px]">Update</button>
+
           <button onClick={() => handleDelete(_id)} className="btn bg-cyan-700 text-white w-[100px] ml-6">Delete</button>
         </div>
       </div>

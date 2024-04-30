@@ -28,10 +28,12 @@ const MyCraftItems = () => {
     }
 
     const handleDeleteItem = id => {
-        const updatedData = myCraftData.filter(item => item._id !== id);
+        const updatedData = myCraftData.filter(craftItem => craftItem._id !== id);
         setMyCraftData(updatedData);
         setFilterMyData(updatedData);
     };
+
+    
 
     useEffect(() => {
         if (user && user.email) {
