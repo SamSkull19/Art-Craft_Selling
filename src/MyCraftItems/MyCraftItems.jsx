@@ -27,6 +27,11 @@ const MyCraftItems = () => {
         }
     }
 
+    const handleDeleteItem = id => {
+        const updatedData = myCraftData.filter(item => item._id !== id);
+        setMyCraftData(updatedData);
+        setFilterMyData(updatedData);
+    };
 
     useEffect(() => {
         if (user && user.email) {
@@ -41,10 +46,11 @@ const MyCraftItems = () => {
     }, [user]);
 
     if (loading) {
-        return <span className="loading loading-spinner loading-lg"></span>
+        return <div className="flex justify-center items-center"><span className="loading loading-spinner loading-lg"></span></div>
     }
 
     console.log(myCraftData);
+    
 
     return (
         <div>
@@ -62,7 +68,7 @@ const MyCraftItems = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20'>
                 {
-                    filterMyData.map(myCraft => <MyCraftItem key={myCraft._id} myCraft={myCraft}></MyCraftItem>)
+                    filterMyData.map(myCraft => <MyCraftItem key={myCraft._id} myCraft={myCraft} handleDeleteItems={handleDeleteItem}></MyCraftItem>)
                 }
             </div>
         </div>

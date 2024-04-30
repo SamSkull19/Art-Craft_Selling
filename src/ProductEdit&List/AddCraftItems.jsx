@@ -42,6 +42,7 @@ const AddCraftItems = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
+                //   event.target.reset();
             }
         })
     }
