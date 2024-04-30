@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateCraftList = () => {
     const updateItems = useLoaderData();
@@ -14,14 +15,58 @@ const UpdateCraftList = () => {
     if (!updateCraftItem) {
         return <div>Details not found.</div>;
     }
-    const { imageLink, itemName, customization, price, subcategoryName, stockStatus, rating, shortDescription, processingTime, imageType } = updateCraftItem;
+    const { _id, imageLink, itemName, customization, price, subcategoryName, stockStatus, rating, shortDescription, processingTime, imageType } = updateCraftItem;
+
+
+
+    const handleUpdateCraftItem = event => {
+        event.preventDefault();
+
+        const form = event.target;
+
+        const itemName = form.item_name.value;
+        const subcategoryName = form.subcategory_Name.value;
+        const shortDescription = form.short_description.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const customization = form.customization.value;
+        const imageLink = form.image_link.value;
+        const imageType = form.image_type.value;
+        const processingTime = form.processing_time.value;
+        const stockStatus = form.Stock_Status.value;
+
+
+        const updateItems = { itemName, subcategoryName, shortDescription, price, rating, customization, imageLink, imageType, processingTime, stockStatus}
+
+        console.log(updateItems);
+
+        fetch(`http://localhost:5000/craftItems/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(updateItems)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Item Updated Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
+    }
 
     return (
         <div>
             <section className="max-w-4xl p-6 mx-auto bg-stone-300 rounded-md shadow-md dark:bg-gray-800 my-20">
                 <h1 className="text-3xl font-bold text-black text-center py-8">Update Craft Items</h1>
 
-                <form>
+                <form onSubmit={handleUpdateCraftItem}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1 text-lg">
 
 
