@@ -43,7 +43,7 @@ const UpdateCraftList = () => {
 
         console.log(updateItems);
 
-        fetch(`http://localhost:5000/craftItems/${_id}`, {
+        fetch(`https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

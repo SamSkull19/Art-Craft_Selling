@@ -25,7 +25,7 @@ const AddCraftItems = () => {
 
         console.log(newItem);
 
-        fetch('http://localhost:5000/craftItems', {
+        fetch('https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

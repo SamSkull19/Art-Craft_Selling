@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch('http://localhost:5000/craftItems'),
+        loader: () => fetch('https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems'),
         element: <>
           <Slider></Slider>
           <Stats></Stats>
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
 
       {
         path: "/craftItemsDetail/:id",
-        loader: () => fetch(`http://localhost:5000/craftItems/`),
+        loader: () => fetch(`https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems/`),
         element: <>
           <PrivateRoute><CItemsDetail></CItemsDetail></PrivateRoute>
         </>
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
 
       {
         path: "/allCraftItems",
-        loader: () => fetch('http://localhost:5000/craftItems'),
+        loader: () => fetch('https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems'),
         element: <>
           <AllCraftItems></AllCraftItems>
         </>
@@ -81,21 +81,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/updatePage/:id",
-        loader: () => fetch(`http://localhost:5000/craftItems/`),
+        loader: () => fetch(`https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems/`),
         element: <>
           <PrivateRoute><UpdateCraftList></UpdateCraftList></PrivateRoute>
         </>
       },
       {
         path: "/allCraftCategory/:id",
-        loader: () => fetch(`http://localhost:5000/craftItemCategory`),
+        loader: () => fetch(`https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItemCategory`),
         element: <>
           <AllCraftCategoryList></AllCraftCategoryList>
         </>
       },
       {
         path: "/allCraftCategoryDetail/:id",
-        loader: () => fetch(`http://localhost:5000/craftItemCategory`),
+        loader: () => fetch(`https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItemCategory`),
         element: <>
           <CategoryItemDetail></CategoryItemDetail>
         </>

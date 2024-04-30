@@ -37,7 +37,7 @@ const MyCraftItems = () => {
 
     useEffect(() => {
         if (user && user.email) {
-            fetch('http://localhost:5000/craftItems')
+            fetch('https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems')
                 .then(response => response.json())
                 .then(data => {
                     const myData = data.filter(item => item.email === user.email);

@@ -27,7 +27,7 @@ const MyCraftItem = ({ myCraft, handleDeleteItems}) => {
       .then((result) => {
         if (result.isConfirmed) {
 
-          fetch(`http://localhost:5000/craftItems/${id}`, {
+          fetch(`https://neff-roxx-server-afa7i0hfc-sifat-samins-projects.vercel.app/craftItems/${id}`, {
             method: 'DELETE'
           })
             .then(res => res.json())
