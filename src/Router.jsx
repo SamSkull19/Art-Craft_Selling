@@ -14,6 +14,9 @@ import MyCraftItems from './MyCraftItems/MyCraftItems.jsx';
 import UpdateCraftList from './MyCraftItems/UpdateCraftList.jsx';
 import ErrorPage from './ErrorPage.jsx';
 import PrivateRoute from './PrivateRoute.jsx/PrivateRoute.jsx';
+import AllCraftCategory from './AllCraftCategory/AllCraftCategory.jsx';
+import AllCraftCategoryList from './AllCraftCategory/AllCraftCategoryList.jsx';
+import CategoryItemDetail from './AllCraftCategory/CategoryItemDetail.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,6 +32,7 @@ const router = createBrowserRouter([
           <Slider></Slider>
           <Stats></Stats>
           <CraftItemsList></CraftItemsList>
+          <AllCraftCategory></AllCraftCategory>
           <Executives></Executives>
         </>
       },
@@ -80,6 +84,20 @@ const router = createBrowserRouter([
         loader: () => fetch(`http://localhost:5000/craftItems/`),
         element: <>
           <PrivateRoute><UpdateCraftList></UpdateCraftList></PrivateRoute>
+        </>
+      },
+      {
+        path: "/allCraftCategory/:id",
+        loader: () => fetch(`http://localhost:5000/craftItemCategory`),
+        element: <>
+          <AllCraftCategoryList></AllCraftCategoryList>
+        </>
+      },
+      {
+        path: "/allCraftCategoryDetail/:id",
+        loader: () => fetch(`http://localhost:5000/craftItemCategory`),
+        element: <>
+          <CategoryItemDetail></CategoryItemDetail>
         </>
       },
     ]
