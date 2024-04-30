@@ -12,12 +12,14 @@ import CItemsDetail from './ProductEdit&List/CItemsDetail.jsx';
 import AllCraftItems from './AllItemsList/AllCraftItems.jsx';
 import MyCraftItems from './MyCraftItems/MyCraftItems.jsx';
 import UpdateCraftList from './MyCraftItems/UpdateCraftList.jsx';
+import ErrorPage from './ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <App />,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",
